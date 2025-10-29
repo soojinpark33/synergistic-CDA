@@ -1,11 +1,8 @@
-# Set directory
-    setwd("Z:/")
-
 # Call in packages
     library(xtable)
     library(gt) 
     
-    source("U:/CDA_impact/1st round code/Stochastic_only/casestudy_source_code.R")
+    source("casestudy_source_code.R")
 
 #::::::::::::::::::::::::::
 # Data preprocessing
@@ -117,4 +114,5 @@ result.xgcf.b <- calculate_disparities_xgcf(covariates=NULL, cvars, rvar, xvars,
                                             cluster_id = "SCH_ID", n_bootstrap = 500)
 
 save.image(file = "all.RData")
+
 
