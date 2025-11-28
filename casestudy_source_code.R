@@ -370,7 +370,6 @@
         delta_xg = delta_xg, zeta_xg = zeta_xg, delta_xg_se = delta_xg_se, zeta_xg_se = zeta_xg_se
       ))
     }
-    
 #:::::::::::::::::::::::::::::::::::::::
 # Function 3: XGBoost with crossfitting
 #:::::::::::::::::::::::::::::::::::::::   
