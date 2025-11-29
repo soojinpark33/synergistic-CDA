@@ -16,6 +16,18 @@
     library(purrr)
     library(caret)
     
+#::::::::::::::::::::::::::
+# Helper function: Get hyperparameters with defaults
+#::::::::::::::::::::::::::
+# When hyperparams = NULL (default), returns default XGBoost settings
+# When hyperparams is provided, returns the specified hyperparameters
+    get_hyperparams <- function(hyperparams, model_name, defaults = list(max_depth = 6, eta = 0.1, lambda = 1, alpha = 0.1, nrounds = 100)) {
+      if (is.null(hyperparams) || is.null(hyperparams[[model_name]])) {
+        return(defaults)
+      } else {
+        return(hyperparams[[model_name]])
+      }
+    }
 
 #::::::::::::::::::::::::::
 # Function 1: GLM analysis
@@ -652,3 +664,4 @@
         delta_xgcf = delta_xgcf, zeta_xgcf = zeta_xgcf, delta_xgcf_se = delta_xgcf_se, zeta_xgcf_se = zeta_xgcf_se
       ))
     }
+
